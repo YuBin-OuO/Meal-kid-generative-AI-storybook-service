@@ -3,6 +3,9 @@ from django.shortcuts import render, redirect
 def base(request):
     return render(request, 'base.html')
 
+def index(request):
+    return render(request, 'index.html')
+
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required

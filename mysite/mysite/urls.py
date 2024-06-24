@@ -21,13 +21,17 @@ from account import views as account_views
 def base(request):
     return render(request,'base.html')
 
+def index(request):
+    return render(request,'index.html')
+
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', base),
+    path('', index),
+    path('base/', base),
     path('account/', include('django.contrib.auth.urls')),  
     path('signup/', account_views.signup, name='signup'),  # 회원가입 URL
     path('accounts/profile/', account_views.profile, name='profile'),
-    path('', account_views.base, name='base'),
+    path('', account_views.index, name='index'),
 ]
 
 from django.conf import settings

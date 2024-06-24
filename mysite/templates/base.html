@@ -14,14 +14,14 @@
                     {% if user.is_authenticated %}
                         <li>
                             <a href="/" id="logout-link">로그아웃</a>
-                            <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+                            <form id="logout-form" action="{% url 'logout' %}?next={{request.path}}" method="post" style="display: none;">
                                 {% csrf_token %}
                             </form>
                         </li>
                         <li><a href="{% url 'profile' %}">내 정보</a></li>
                     {% else %}
-                        <li><a href="{% url 'login' %}">로그인</a></li>
-                        <li><a href="{% url 'signup' %}">회원가입</a></li>
+                        <li><a href="{% url 'login' %}?next={{request.path}}">로그인</a></li>
+                        <li><a href="{% url 'signup' %}?next={{request.path}}">회원가입</a></li>
                     {% endif %}
                     {% if user.is_staff %}
                     <li><a href="/admin/">관리자 페이지</a></li>
