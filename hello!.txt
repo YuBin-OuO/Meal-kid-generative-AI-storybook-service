@@ -1,10 +1,7 @@
 hello 22
-<<<<<<< HEAD
-안녕하세요 (원준)
-=======
 집가고 시퍼
 plussdfasfaasdf
 another folder
 안뇽
 배고파 점심 머먹어
->>>>>>> 96332d867603126ac7d94e9b2afa08906b96ec06
+오늘은 ㅜ뭐해야하죠
