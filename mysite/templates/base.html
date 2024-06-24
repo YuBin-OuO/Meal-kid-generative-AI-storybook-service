@@ -1,0 +1,45 @@
+<!doctype html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Imagen^^</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    {% if user.is_authenticated %}
+                        <li>
+                            <a href="/" id="logout-link">로그아웃</a>
+                            <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+                                {% csrf_token %}
+                            </form>
+                        </li>
+                        <li><a href="{% url 'profile' %}">내 정보</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}">로그인</a></li>
+                        <li><a href="{% url 'signup' %}">회원가입</a></li>
+                    {% endif %}
+                    {% if user.is_staff %}
+                    <li><a href="/admin/">관리자 페이지</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <nav>
+        <ul class="nav-list">
+            {% comment %} <li><a href="/selfchatgpt/clear/">Chat</a></li> {% endcomment %}
+        </ul>
+    </nav>
+    <script>
+        document.getElementById('logout-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('logout-form').submit();
+        });
+    </script>
+</body>
+</html>

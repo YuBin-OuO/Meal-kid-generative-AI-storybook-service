@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    <div class="background">
+        <div class="login-container">
+            <div class="emoji">😊</div>
+            <h2>Login</h2>
+            <form method="post" class="login-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="login-button">로그인</button>
+            </form>
+            <p class="forgot-password"><a href="#">비밀번호를 잊어버리셨나요?</a></p>
+        </div>
+    </div>
+</body>
+</html>

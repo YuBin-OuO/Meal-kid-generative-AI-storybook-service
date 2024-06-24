@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>내 정보</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="profile">
+        <h2>내 정보</h2>
+        <p>안녕하세요, {{ user.username }}님!</p>
+        <p>이메일: {{ user.email }}</p>
+    </div>
+</body>
+</html>
