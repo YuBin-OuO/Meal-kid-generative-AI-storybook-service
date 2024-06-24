@@ -48,6 +48,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'account.custom_middleware.UserSessionMiddleware',  # 사용자 정의 미들웨어 추가
 ]
 
 ROOT_URLCONF = "mysite.urls"
