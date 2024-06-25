@@ -32,6 +32,8 @@ urlpatterns = [
     path('signup/', account_views.signup, name='signup'),  # 회원가입 URL
     path('accounts/profile/', account_views.profile, name='profile'),
     path('', account_views.index, name='index'),
+    path('reader/', include('reader.urls')),
+    path('generator/', include('generator.urls')),
 ]
 
 from django.conf import settings
