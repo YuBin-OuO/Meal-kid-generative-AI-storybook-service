@@ -11,7 +11,7 @@
 
 <meta name="robots" content="noindex, nofollow" />
 
-<title>꿈을 꾸는 아이들 Imagen Kids</title>
+{% block title %}  <title>꿈을 꾸는 아이들 Imagen Kids</title>{% endblock %}
 <meta name="robots" content="noindex, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="website" />
@@ -159,6 +159,9 @@ ul.slides img {
 </nav>
 </div>
 </header>
+<!-- //////////////////////////////////////////////////        body       //////////////////////////////////////////////////-->
+<!-- ////////////////////////////////////////////////// -->{% block content %} <!-- //////////////////////////////////////////////////-->
+
 <div id="content" class="main-container">
 <section class="content-area ">
 <div id="main" class role="main">
@@ -465,6 +468,10 @@ ul.slides img {
 </div>
 </div>
 </section>
+
+<!-- ////////////////////////////////////////////////// -->{% endblock %} <!--//////////////////////////////////////////////////-->
+<!-- //////////////////////////////////////////////////     body     //////////////////////////////////////////////////-->
+
 <div class="footer-callout">
 </div>
 <footer id="colophon" class="site-footer footer bg-dark" role="contentinfo">
@@ -475,6 +482,7 @@ ul.slides img {
 <div class="site-info col-sm-6">
 <div class="copyright-text">
 </div>
+
 <div class="footer-credits">
 Theme by <a href="https://colorlib.com/" target="_blank" rel="nofollow noopener" title="Colorlib">Colorlib</a> Powered by <a href="http://wordpress.org/" target="_blank" title="WordPress.org">WordPress</a> </div>
 </div>
