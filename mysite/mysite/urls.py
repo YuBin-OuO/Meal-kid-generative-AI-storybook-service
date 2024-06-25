@@ -28,6 +28,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('', index),
     path('base/', base),
+    path('account/', include('django.contrib.auth.urls')),  
     path('account/', include('allauth.urls')),  
     path('signup/', account_views.signup, name='signup'),  # 회원가입 URL
     path('accounts/profile/', account_views.profile, name='profile'),
