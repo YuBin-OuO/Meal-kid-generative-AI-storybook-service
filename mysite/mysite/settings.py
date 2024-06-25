@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "account",
+    "myaccount",
     "reader",
     "generator",
 ]
@@ -52,17 +52,18 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'account.custom_middleware.UserSessionMiddleware',  # 사용자 정의 미들웨어 추가
+    "myaccount.custom_middleware.UserSessionMiddleware",  # 사용자 정의 미들웨어 추가
 ]
 
 ROOT_URLCONF = "mysite.urls"
+
 
 import os
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [BASE_DIR / 'templates',
-                 BASE_DIR / 'account/templates',],
+                 BASE_DIR / 'myaccount/templates',],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
