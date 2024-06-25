@@ -38,13 +38,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "account",
-<<<<<<< HEAD
     "reader",
     "generator",
-=======
->>>>>>> 34ce2ea20742bec1919e7e8a38eb0b3548fbcfbc
 ]
+
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
