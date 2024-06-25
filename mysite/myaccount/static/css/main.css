@@ -185,8 +185,8 @@ iframe {
 
 /*==================================================================
 [ Background ]*/
-.bg1 {background: #3b5998;}
-.bg2 {background: #1da1f2;}
+.bg1 {background: #FFFFFF;}
+.bg2 {background: #2DB400;}
 .bg3 {background: #FEE500;}
 
 
@@ -387,15 +387,13 @@ input.input100 {
   height: 48px;
 }
 
-.input100:focus + .focus-input100 + .label-input100 {
-  top: 14px;
-  font-size: 13px;
-}
-
 .has-val {
   height: 48px !important;
 }
 
+
+.input100:focus + .focus-input100 + .label-input100,
+.input100:valid + .focus-input100 + .label-input100,
 .has-val + .focus-input100 + .label-input100 {
   top: 14px;
   font-size: 13px;
