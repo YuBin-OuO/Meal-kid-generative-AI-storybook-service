@@ -5,12 +5,15 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import UserSessionData
 from django.http import HttpResponse
-def base(request):
-    return render(request, 'base.html')
+
+# def base(request):
+#     return render(request, 'base.html')
 
 def index(request):
     return render(request, 'index.html')
+
 from .forms import CustomUserCreationForm
+
 def signup(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
@@ -37,6 +40,7 @@ def custom_logout(request):
     return redirect('login')
 
 from django.http import HttpResponse
+
 @login_required
 def set_session_data(request):
     request.session['key'] = f"Value for user {request.user.username}"
@@ -50,6 +54,7 @@ def get_session_data(request):
 from django.utils.crypto import get_random_string
 from django.core.mail import send_mail
 from django.conf import settings
+
 def password_reset_request(request):
     if request.method == 'POST':
         email = request.POST.get('email')
