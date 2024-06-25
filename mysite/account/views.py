@@ -73,3 +73,6 @@ def password_reset_request(request):
             )
             return redirect('password_reset_done')
     return render(request, 'registration/password_reset.html')
+
+def select_account(request):
+    return render(request, 'registration/select_account.html')
