@@ -7,3 +7,10 @@ class UserSessionData(models.Model):
 
     def __str__(self):
         return f"Session data for user {self.user.username}"
+
+class PasswordResetRequest(models.Model):
+    email = models.EmailField()
+    requested_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email
