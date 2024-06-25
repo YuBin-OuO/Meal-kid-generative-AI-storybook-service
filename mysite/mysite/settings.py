@@ -38,10 +38,13 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "account",
+<<<<<<< HEAD
     "reader",
     "generator",
+=======
+>>>>>>> 34ce2ea20742bec1919e7e8a38eb0b3548fbcfbc
 ]
-
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -50,6 +53,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'account.custom_middleware.UserSessionMiddleware',  # 사용자 정의 미들웨어 추가
 ]
 
 ROOT_URLCONF = "mysite.urls"
@@ -129,3 +133,12 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# 이메일 설정, temp
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+EMAIL_HOST = 'smtp.example.com' 
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your_email@example.com'
+EMAIL_HOST_PASSWORD = 'your_email_password'
+DEFAULT_FROM_EMAIL = 'webmaster@example.com'
