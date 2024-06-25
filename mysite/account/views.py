@@ -4,7 +4,7 @@ from django.contrib.auth import login as auth_login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import UserSessionData
-
+from django.http import HttpResponse
 def base(request):
     return render(request, 'base.html')
 
@@ -17,7 +17,7 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             auth_login(request, user)
-            return redirect('base')
+            return redirect('index')
     else:
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
@@ -35,3 +35,14 @@ def custom_logout(request):
     
     auth_logout(request)
     return redirect('login')
+
+from django.http import HttpResponse
+@login_required
+def set_session_data(request):
+    request.session['key'] = f"Value for user {request.user.username}"
+    return HttpResponse(f"Session data set for user {request.user.username}")
+
+@login_required
+def get_session_data(request):
+    value = request.session.get('key', 'No data found')
+    return HttpResponse(f"Session data for user {request.user.username}: {value}")
