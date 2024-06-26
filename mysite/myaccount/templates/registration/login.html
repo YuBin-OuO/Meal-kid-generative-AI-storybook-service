@@ -91,11 +91,11 @@
 					</div>
 
 					<div class="login100-form-social flex-c-m">
-                        <a href="" class="login100-form-social-item flex-c-m bg1 m-r-5">
+                        <a href="{% provider_login_url 'google' %}" class="login100-form-social-item flex-c-m bg1 m-r-5">
                             <img src="{% static 'images/icons/google_icon.png' %}" alt="Google Image" style="width: 20px; height: 20px;">
                         </a>
 
-                        <a href="" class="login100-form-social-item flex-c-m bg2 m-r-5">
+						<a href="{% provider_login_url 'naver' %}" class="login100-form-social-item flex-c-m bg2 m-r-5">
                             <img src="{% static 'images/icons/naver_icon.png' %}" alt="Naver Image" style="width: 20px; height: 20px;">
                         </a>
 
