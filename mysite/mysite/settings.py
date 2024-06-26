@@ -116,7 +116,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 WSGI_APPLICATION = "mysite.wsgi.application"
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'select_account'
 # LOGOUT_REDIRECT_URL = 'index'
 
 # Database
