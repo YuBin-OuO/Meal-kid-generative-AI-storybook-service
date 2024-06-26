@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import render
-from account import views as account_views
+from myaccount import views as account_views
 def base(request):
     return render(request,'base.html')
 
@@ -29,9 +29,12 @@ urlpatterns = [
     path('', index),
     path('base/', base),
     path('account/', include('django.contrib.auth.urls')),  
+    path('account/', include('allauth.urls')),  
     path('signup/', account_views.signup, name='signup'),  # 회원가입 URL
     path('accounts/profile/', account_views.profile, name='profile'),
     path('', account_views.index, name='index'),
+    path('reader/', include('reader.urls')),
+    path('generator/', include('generator.urls')),
 ]
 
 from django.conf import settings

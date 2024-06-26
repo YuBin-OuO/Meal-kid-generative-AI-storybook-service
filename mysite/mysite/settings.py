@@ -37,8 +37,26 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "account"
+    "myaccount",
+    "reader",
+    "generator",
+    
+    # all auth
+    "django.contrib.sites",
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.naver',
+    'allauth.socialaccount.providers.kakao',
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -48,16 +66,19 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "myaccount.custom_middleware.UserSessionMiddleware",  # 사용자 정의 미들웨어 추가
+    "allauth.account.middleware.AccountMiddleware"
 ]
 
 ROOT_URLCONF = "mysite.urls"
+
 
 import os
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, 'templates'),
-                 os.path.join(BASE_DIR, 'account/templates'),],
+        "DIRS": [BASE_DIR / 'templates',
+                 BASE_DIR / 'myaccount/templates',],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -70,10 +91,34 @@ TEMPLATES = [
     },
 ]
 
+SITE_ID = 1
+SOCIALACCOUNT_LOGIN_ON_GET = True
+
+SOCIALACCOUNT_PROVIDERS = {
+    "kakao": {
+        "APP": {
+            "client_id": 'd954c28fe55d851cfe3e5fc56458ca3c',
+            #"client_id": 'os.getenv("KAKAO_CLIENT_ID")',
+            "secret": 'vBfNkpzkDyrNxbXqVmafYTe0c0zFovPU',
+            #"secret": os.getenv("KAKAO_SECRET_KEY"),
+            "key": ""
+        },
+        "SCOPE": [
+            "profile_nickname",
+            "account_email",
+        ],
+        "AUTH_PARAMS": {
+            "access_type": "online",
+        }
+    }
+}
+
+
 WSGI_APPLICATION = "mysite.wsgi.application"
 
-LOGIN_REDIRECT_URL = 'base'
-LOGOUT_REDIRECT_URL = 'base'
+LOGIN_REDIRECT_URL = '/'
+# LOGOUT_REDIRECT_URL = 'index'
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -107,9 +152,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
-
-TIME_ZONE = "UTC"
+# LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = 'ko-kr'
+# TIME_ZONE = "UTC"
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -120,8 +166,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "/static/"
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# 이메일 설정, temp
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+EMAIL_HOST = 'smtp.example.com' 
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your_email@example.com'
+EMAIL_HOST_PASSWORD = 'your_email_password'
+DEFAULT_FROM_EMAIL = 'webmaster@example.com'
