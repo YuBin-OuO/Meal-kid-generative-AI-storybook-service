@@ -1,9 +1,9 @@
 # 🌈 Meal Kid - 아이의 상상력을 키워주는 생성형 AI 동화책 서비스
 2024 KT Aivle School Big Project  
 👉 https://mealkid.kro.kr  
-## 🗓️ 개발 기간
+## 🗓️ 프로젝트 기간
 2024/6/17 ~ 2024/7/26
-## 🧑‍💻 개발 인원
+## 🧑‍💻 프로젝트 인원
 |<img src="https://avatars.githubusercontent.com/u/74819513?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/156267880?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/112847779?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/160707444?v=4" width="150" height="150"/>|
 |:-:|:-:|:-:|:-:|
 |정창민 (BE/Infra)<br/>[@codeanfanger](https://github.com/codeanfanger)|김가은 (AI)<br/>[@Gaeun012](https://github.com/Gaeun012)|김연송 (AI)<br/>[@mandarinnn2](https://github.com/mandarinnn2)|이혜빈 (AI)<br/>[@2hyeb](https://github.com/2hyeb)|
