@@ -39,6 +39,7 @@
 
 ## 💫 설명
 <!--![AI 22조 발표자료_page-0003](https://github.com/user-attachments/assets/e9864b8f-afba-4fc7-9532-4504e25f2ff5)-->
+![AI 22조 1p 설명서](https://github.com/user-attachments/assets/268d0438-6af6-47d4-825e-56fa463d5fa5)
 ![AI 22조 발표자료_page-0001](https://github.com/user-attachments/assets/478f18ef-46b0-410e-910e-7b41a75ae6f3)
 ![AI 22조 발표자료_page-0002](https://github.com/user-attachments/assets/ee6bcf84-53df-435f-8898-ff17a3d572e2)
 ![AI 22조 발표자료_page-0004](https://github.com/user-attachments/assets/3d2608c4-00c4-454f-9288-6880656fd483)
