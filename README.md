@@ -93,3 +93,6 @@
 ## ✊ 피드백 및 개선 방향
 - 웹사이트 상에서 글씨 크기 조절할 수 있으면 좋을듯
 - 한 책에 대해 각 페이지 별로 생성되는 이미지의 그림체가 일관되면 좋을듯
+
+## 🌟 기타
+![image](https://github.com/user-attachments/assets/7a06bad0-e378-479a-a5ce-b16b43c31c4b)
