@@ -14,8 +14,8 @@
 
 ## 👤 내 역할
 - Django allauth 패키지 기반 소셜 로그인 기능 구현
-- Bootstrap, HTML, CSS, JavaScript 반응형 웹페이지 UI/UX 디자인 및 구현
-- OpenAI Dall-E 3 API 이용해 동화 데이터 기반 이미지 생성 기능 구현 및 프롬프트 엔지니어링
+- Bootstrap, HTML, CSS, JavaScript 기반 반응형 웹페이지 UI/UX 디자인 및 구현
+- OpenAI Dall-E 3 API 이용해 동화 데이터 기반 이미지 생성 기능 구현 및 아이들이 보기에 적절한 이미지 생성하게끔 프롬프트 엔지니어링
 
 ## 🛠️ 사용 언어 및 기술
 - 프론트엔드  
