@@ -13,12 +13,12 @@
 |양원석 (BE)<br/>[@sichu1547](https://github.com/sichu1547)|최성민 (BE)<br/>[@dodochoi](https://github.com/dodochoi)|서원준 (FE)<br/>[@wonjun319](https://github.com/wonjun319)|조유빈 (FE)<br/>[@YuBin-OuO](https://github.com/YuBin-OuO)|
 
 ## 👤 내 역할
-- Django allauth 패키지 기반 **소셜 로그인** 기능 구현
 - Bootstrap, HTML, CSS, JavaScript 기반 **반응형 웹페이지 UI/UX** 디자인 및 구현
 - OpenAI **Dall-E 3** API 이용해 동화 데이터 기반 이미지 생성 기능 구현 및 아이들이 보기에 적절한 이미지 생성하게끔 프롬프트 엔지니어링
     - 왜 **Dall-E 3**?
       → 영어 프롬프트만 지원해 동화 데이터의 번역이 추가로 필요한 **Karlo**와,
       성능이 그다지 좋지 않은 **DALL-E 2**를 제외한 결과
+- Django allauth 패키지 기반 **소셜 로그인** 기능 구현
 
 ## 🛠️ 사용 언어 및 기술
 - 프론트엔드  
