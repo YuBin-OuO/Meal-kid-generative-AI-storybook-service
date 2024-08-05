@@ -18,7 +18,7 @@
 - OpenAI **Dall-E 3** API 이용해 동화 데이터 기반 이미지 생성 기능 구현 및 아이들이 보기에 적절한 이미지 생성하게끔 프롬프트 엔지니어링
     - 왜 **Dall-E 3**?  
       → 영어 프롬프트만 지원해 동화 데이터의 번역이 추가로 필요한 **Karlo**와,
-      성능이 그다지 좋지 않은 **DALL-E 2**를 제외한 결과
+      성능이 그다지 좋지 않은 **Dall-E 2**를 제외한 결과
 
 ## 🛠️ 사용 언어 및 기술
 - 프론트엔드  
@@ -94,8 +94,12 @@
 ![AI 22조 발표자료_page-0050](https://github.com/user-attachments/assets/1cbf1014-47c8-4815-b565-39ab8e9f2712)
 
 ## ✊ 피드백 및 개선 방향
-- 웹사이트 상에서 글씨 크기 조절할 수 있으면 좋을듯
-- 한 책에 대해 각 페이지 별로 생성되는 이미지의 그림체가 일관되면 좋을듯
+- 웹사이트 상에서 **글씨 크기 조절**할 수 있으면 좋을듯
+- 한 책에 대해 각 페이지 별로 생성되는 이미지의 그림체가 일관되면 좋을듯  
+      → 웹 클라이언트에선 이미지 생성 시 **Dall-E**에게 **seed**와 같은 역할 하는 **gen_id** 추출해달라고 해서 그 기반으로 새로운 이미지를 생성해달라고 하면 일관된 이미지 생성이 가능하지만  
+      (참고: https://www.reddit.com/r/dalle2/comments/17qglni/each_dalle_image_has_a_gen_id_that_you_can/  
+      https://www.gpters.org/ai-image/post/gpts-chatbot-creates-images-sHUUdAgBdflIueb)  
+      현재 시점에서 **API**에서는 **보안** 문제로 불가능... 최대한 **텍스트 프롬프트**를 구체화하는 방법밖에 없는듯
 
 ## 🌟 기타
 ![image](https://github.com/user-attachments/assets/7a06bad0-e378-479a-a5ce-b16b43c31c4b)
