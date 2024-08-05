@@ -95,11 +95,15 @@
 
 ## ✊ 피드백 및 개선 방향
 - 웹사이트 상에서 **글씨 크기 조절**할 수 있으면 좋을듯
-- 한 책에 대해 각 페이지 별로 생성되는 이미지의 그림체가 일관되면 좋을듯  
-      → 웹 클라이언트에선 이미지 생성 시 **Dall-E**에게 **seed**와 같은 역할 하는 **gen_id** 추출해달라고 해서 그 기반으로 새로운 이미지를 생성해달라고 하면 일관된 이미지 생성이 가능하지만  
-      (참고: https://www.reddit.com/r/dalle2/comments/17qglni/each_dalle_image_has_a_gen_id_that_you_can/  
-      https://www.gpters.org/ai-image/post/gpts-chatbot-creates-images-sHUUdAgBdflIueb)  
-      현재 시점에서 **API**에서는 **보안** 문제로 불가능... 최대한 **텍스트 프롬프트**를 구체화하는 방법밖에 없는듯
+- 한 책에 대해 각 페이지 별로 생성되는 이미지의 **그림체가 일관**되면 좋을듯  
+    - 초기에는 모델에 삽화 이미지 생성을 요청할 때 seed를 활용하여 이전에 생성된 이미지에 대한 정보를 input으로 제공하고, 이를 통해 유사한 이미지를 생성하는 방식을 고려함  
+하지만, **DALL-E API는 보안 등의 문제로 seed 역할을 하는 인수를 제공하지 않음**  
+웹 클라이언트의 경우, DALL-E 모델을 이용해 이미지를 생성할 때 gen_id를 추출해 이를 seed로 활용할 수 있었으나<i> (참고: https://www.reddit.com/r/dalle2/comments/17qglni/each_dalle_image_has_a_gen_id_that_you_can/  
+      https://www.gpters.org/ai-image/post/gpts-chatbot-creates-images-sHUUdAgBdflIueb)</i>, 이 프로젝트에선 API를 활용했기 때문에 해당 방식을 사용할 수 없었음  
+    - 모델의 요청값에 seed 인수를 넣을 수 있는 Stable Diffusion 등의 다른 모델을 검토했지만, 한국어 동화 데이터에 적합한 이미지를 생성하는 데 있어 성능이 만족스럽지 않음  
+    → DALL-E 3를 통해 일관된 삽화를 생성하기 위해, 기존에 단순히 특정 동화 내용을 기반으로 이미지를 생성하도록 명령하는 방식의 프롬프트에서 벗어나, **더 구체적이고 세부적인 지시사항을 포함한 여섯 문장으로 프롬프트를 확장**. 배경 묘사, 그림체와 색조, 선의 굵기, 분위기 등을 명확히 제시했으며, 동화 내용이 그림에 포함되지 않도록 텍스트 요소를 제외한 그림 요소만을 생성하라는 명령도 추가!  
+
+        => 비록 여전히 같은 동화 내의 인물을 완전히 동일하게 묘사하는 데는 한계가 있지만, 일정 수준의 일관된 그림체는 유지됨 
 
 ## 🌟 기타
 ![image](https://github.com/user-attachments/assets/7a06bad0-e378-479a-a5ce-b16b43c31c4b)
